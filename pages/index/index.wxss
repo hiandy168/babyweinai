@@ -8,11 +8,12 @@
 .today-date {
   color: #aaa;
   margin: 10rpx;
+  font-size: 11pt;
 }
 
 .today-count {
   width: 70%;
-  margin-top: 100rpx;
+  margin-top: 50rpx;
 }
 
 .today-count-box {
@@ -21,13 +22,16 @@
   direction: row;
   justify-content: space-between;
 }
+.today-count-box.first{
+  margin-top: 50rpx;
+}
 
 .today-count-item-left {
   color: #bbb;
 }
 
 .today-count-item-left .name {
-  font-size: 25rpx;
+  font-size: 11pt;
   margin-left: 20rpx;
 }
 
@@ -37,7 +41,7 @@
 }
 
 .today-count-item-right .unit {
-  font-size: 25rpx;
+  font-size: 11pt;
 }
 .record{
   width: 100%;

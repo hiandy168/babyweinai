@@ -6,7 +6,7 @@
       <text class="today">今日</text>
       <text class="today-date">2017-03-30</text>
     </view>
-    <view class="today-count-box">
+    <view class="today-count-box first">
       <view class="today-count-item-left">
         <text>👰</text>
         <text class="name"> 母乳</text>
