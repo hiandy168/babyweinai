@@ -1,0 +1,44 @@
+/**index.wxss**/
+
+.today {
+  font-size: 100rpx;
+  opacity: 0.6;
+}
+
+.today-date {
+  color: #aaa;
+  margin: 10rpx;
+}
+
+.today-count {
+  width: 70%;
+  margin-top: 100rpx;
+}
+
+.today-count-box {
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+
+.today-count-item-left {
+  color: #bbb;
+}
+
+.today-count-item-left .name {
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+
+.today-count-item-right {
+  margin-top: 10rpx;
+  color: #aaa;
+}
+
+.today-count-item-right .unit {
+  font-size: 25rpx;
+}
+.record{
+  width: 100%;
+}
