@@ -1,8 +1,14 @@
 /**index.wxss**/
-
+.today-box{
+   width: 100%;
+  display:inline-flex;
+  align-items:center;
+  direction: row;
+  justify-content: space-between;
+}
 .today {
   font-size: 100rpx;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .today-date {
@@ -36,7 +42,7 @@
 }
 
 .today-count-item-right {
-  margin-top: 10rpx;
+  margin-top: 8rpx;
   color: #aaa;
 }
 

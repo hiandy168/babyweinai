@@ -2,7 +2,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="today-count">
-    <view>
+    <view class="today-box">
       <text class="today">今日</text>
       <text class="today-date">2017-03-30</text>
     </view>
