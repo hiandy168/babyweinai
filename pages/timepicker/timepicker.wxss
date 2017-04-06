@@ -1,0 +1,5 @@
+@import "../common/weui.wxss";
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}

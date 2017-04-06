@@ -1,0 +1,57 @@
+<view class="container-page">
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="weui-cells__title">项目</view>
+      <view class="padding-box">
+        <radio-group>
+          <label>
+            <radio value="value" checked="false" />母乳
+          </label>
+          <label>
+            <radio value="value" checked="false" />配方奶
+          </label>
+          <label>
+            <radio value="value" checked="false" />开水
+          </label>
+          <label>
+            <radio value="value" checked="false" />便便
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">计量</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="number" placeholder="输入计量" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">日期</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{time}}">
+              <view class="weui-input">{{time}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">时间</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker mode="time" value="{{time}}">
+              <view class="weui-input">{{time}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section padding-box">
+        <button type="primary">确定</button>
+        <button type="default">取消</button>
+    </view>
+  </view>
+</view>

@@ -48,6 +48,8 @@
     </view>
   </view>
   <view class="record">
-    <button type="primary">记一次</button>
+    <navigator url="../record/record" class="navigator">
+      <button type="primary">记一次</button>
+    </navigator>
   </view>
 </view>
