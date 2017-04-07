@@ -51,7 +51,7 @@
     </view>
     <view class="page-section padding-box">
         <button type="primary">确定</button>
-        <button type="default">取消</button>
+        <button type="default" bindtap="cancleEvent">取消</button>
     </view>
   </view>
 </view>
