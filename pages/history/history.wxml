@@ -1,0 +1,36 @@
+<view class="container">
+  <block wx:for-items="{{historyList}}" wx:key="{{item.id}}">
+    <view id="{{item.id}}" class="history-item {{item.open ? 'show' : ''}}" bindtap="historyToggle">
+      <view class="title">
+        <view>
+          {{item.title}}
+        </view>
+        <view class="summary">
+          <view>母乳1次</view>
+          <view>配方奶1000ml</view>
+          <view>开水2000ml</view>
+          <view>便便3次</view>
+        </view>
+      </view>
+      <view class="arrow">
+      </view>
+    </view>
+    <view class="sub-records {{item.open ? 'show' : ''}}">
+      <view class="record">
+        <view class="r-item">2016-01-01 17:00</view>
+        <view class="r-item">开水</view>
+        <view class="r-item">100ml</view>
+      </view>
+      <view class="record">
+        <view class="r-item">2016-01-01 17:00</view>
+        <view class="r-item">开水</view>
+        <view class="r-item">100ml</view>
+      </view>
+      <view class="record">
+        <view class="r-item">2016-01-01 17:00</view>
+        <view class="r-item">开水</view>
+        <view class="r-item">100ml</view>
+      </view>
+    </view>
+  </block>
+</view>

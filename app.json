@@ -3,13 +3,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/record/record",
-    "pages/timepicker/timepicker"
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "#353535",
     "navigationBarTitleText": "宝宝喂奶",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [
@@ -20,7 +20,7 @@
         "selectedIconPath": "images/main.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/history/history",
         "text": "历史",
         "iconPath": "images/main.png",
         "selectedIconPath": "images/main.png"
