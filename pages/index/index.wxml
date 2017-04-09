@@ -1,55 +1,57 @@
 
 <!--index.wxml-->
 <view class="container">
-  <view class="today-count">
-    <view class="today-box">
-      <text class="today">今日</text>
-      <text class="today-date">2017-03-30</text>
+  <view class="page-body">
+    <view class="today-count">
+      <view class="today-box">
+        <text class="today">今日</text>
+        <text class="today-date">2017-03-30</text>
+      </view>
+      <view class="today-count-box first">
+        <view class="today-count-item-left">
+          <text>👰</text>
+          <text class="name"> 母乳</text>
+        </view>
+        <view class="today-count-item-right">
+          <text>100</text>
+          <text class="unit"> ml</text>
+        </view>
+      </view>
+      <view class="today-count-box">
+        <view class="today-count-item-left">
+          <text>🍼</text>
+          <text class="name"> 配方奶</text>
+        </view>
+        <view class="today-count-item-right">
+          <text>100</text>
+          <text class="unit"> ml</text>
+        </view>
+      </view>
+      <view class="today-count-box">
+        <view class="today-count-item-left">
+          <text>🥛</text>
+          <text class="name"> 开水</text>
+        </view>
+        <view class="today-count-item-right">
+          <text>100</text>
+          <text class="unit"> ml</text>
+        </view>
+      </view>
+      <view class="today-count-box">
+        <view class="today-count-item-left">
+          <text>💩</text>
+          <text class="name"> 便便</text>
+        </view>
+        <view class="today-count-item-right">
+          <text>10</text>
+          <text class="unit"> 次</text>
+        </view>
+      </view>
     </view>
-    <view class="today-count-box first">
-      <view class="today-count-item-left">
-        <text>👰</text>
-        <text class="name"> 母乳</text>
-      </view>
-      <view class="today-count-item-right">
-        <text>100</text>
-        <text class="unit"> ml</text>
-      </view>
+    <view class="record padding-box">
+      <navigator url="../record/record">
+        <button type="primary">记一次</button>
+      </navigator>
     </view>
-    <view class="today-count-box">
-      <view class="today-count-item-left">
-        <text>🍼</text>
-        <text class="name"> 配方奶</text>
-      </view>
-      <view class="today-count-item-right">
-        <text>100</text>
-        <text class="unit"> ml</text>
-      </view>
-    </view>
-    <view class="today-count-box">
-      <view class="today-count-item-left">
-        <text>🥛</text>
-        <text class="name"> 开水</text>
-      </view>
-      <view class="today-count-item-right">
-        <text>100</text>
-        <text class="unit"> ml</text>
-      </view>
-    </view>
-    <view class="today-count-box">
-      <view class="today-count-item-left">
-        <text>💩</text>
-        <text class="name"> 便便</text>
-      </view>
-      <view class="today-count-item-right">
-        <text>10</text>
-        <text class="unit"> 次</text>
-      </view>
-    </view>
-  </view>
-  <view class="record">
-    <navigator url="../record/record" class="navigator">
-      <button type="primary">记一次</button>
-    </navigator>
   </view>
 </view>

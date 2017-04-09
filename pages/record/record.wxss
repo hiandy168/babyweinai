@@ -19,7 +19,7 @@
     padding: 0 30rpx 0 30rpx
 }
 
-button{
-  margin-top: 30rpx;
-  margin-bottom: 30rpx;
+button.ok{
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
 }

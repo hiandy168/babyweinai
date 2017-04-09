@@ -6,8 +6,8 @@
 }
 
 .history-item {
-  margin: 0 0 10rpx;
-  background-color: #fff;
+  margin: 0 0 20rpx;
+  background-color: red;
   border-radius: 4rpx;
   overflow: hidden;
   display: flex;
@@ -59,7 +59,7 @@
   padding: 0 20rpx 0 20rpx;
   font-size: 30rpx;
   background-color: #fff;
-  margin: -10rpx 0 10rpx;
+  margin: -20rpx 0 10rpx;
   transform: translateY(-50%);
   transition: 0.5s;
 }
@@ -73,17 +73,33 @@
 .sub-records .record {
   display: flex;
   flex-direction: row;
-  border-bottom: 1rpx solid #ddd;
   align-items: center;
   height: 0;
   opacity: 0;
+  position: absolute;
+  left: 20rpx;
 }
 .sub-records.show .record{
-  height: 70rpx;
+  height: 80rpx;
   opacity: 1;
+  width:100%;
+
 }
 
-.sub-records .record:last-child {
+.sub-records .record-box{
+  opacity: 0;
+  height: 0;
+}
+
+.sub-records.show .record-box{
+  height: 80rpx;
+  width: 100%;
+  opacity: 1;
+          border-bottom: 1rpx solid #ddd;
+
+}
+
+.sub-records .record-box:last-child {
   border-bottom: 0;
 }
 

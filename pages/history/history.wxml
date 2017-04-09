@@ -16,20 +16,12 @@
       </view>
     </view>
     <view class="sub-records {{item.open ? 'show' : ''}}">
-      <view class="record">
-        <view class="r-item">2016-01-01 17:00</view>
-        <view class="r-item">开水</view>
-        <view class="r-item">100ml</view>
-      </view>
-      <view class="record">
-        <view class="r-item">2016-01-01 17:00</view>
-        <view class="r-item">开水</view>
-        <view class="r-item">100ml</view>
-      </view>
-      <view class="record">
-        <view class="r-item">2016-01-01 17:00</view>
-        <view class="r-item">开水</view>
-        <view class="r-item">100ml</view>
+      <view class="record-box" data-datetime="{{record.datetime}}" wx:for="{{item.records}}" wx:for-item="record" >
+        <view class="record" style="left:{{record.offsetX}}px" bindtouchstart="recordStart" catchtouchmove="recordMove" bindtouchend="recordEnd">
+          <view class="r-item">{{record.datetime}}</view>
+          <view class="r-item">{{record.type}}</view>
+          <view class="r-item">{{record.count+record.unit}}</view>
+        </view>
       </view>
     </view>
   </block>
