@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/record/record",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/historyDetail/historyDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

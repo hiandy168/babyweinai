@@ -147,7 +147,7 @@ Page(
             var historyList = this.data.historyList;
             var item = historyList[0];
             var records = item.records;
-            records[0].offsetX=20-mX;
+            records[0].offsetX=18-mX;
             this.setData({
                 historyList: historyList
             });
