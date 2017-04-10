@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/record/record",
     "pages/history/history",
-    "pages/historyDetail/historyDetail"
+    "pages/historyDetail/historyDetail",
+    "pages/charts/charts"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +28,7 @@
         "selectedIconPath": "images/main.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/charts/charts",
         "text": "统计",
         "iconPath": "images/chart.png",
         "selectedIconPath": "images/main.png"
