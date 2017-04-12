@@ -5,7 +5,8 @@
     "pages/record/record",
     "pages/history/history",
     "pages/historyDetail/historyDetail",
-    "pages/charts/charts"
+    "pages/charts/charts",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,7 +35,7 @@
         "selectedIconPath": "images/main.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/setting/setting",
         "text": "设置",
         "iconPath": "images/chart.png",
         "selectedIconPath": "images/main.png"

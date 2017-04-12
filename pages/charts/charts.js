@@ -30,6 +30,7 @@ var newChart1 = function(){
             categories: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6','3/7'],
             series: [{
                 name: '母乳',
+                color:'#dddddd',
                 data: [1, 3, 5, 10,7, 4,5],
                 
             }],
