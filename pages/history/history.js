@@ -113,12 +113,23 @@ var historyList = [
     }
 ];
 var recordStartX = 0;
+var app = getApp();
 Page(
     {
         data: {
             historyList: historyList
         }
         ,
+        onLoad: function (options) {
+            // 页面初始化 options为页面跳转所带来的参数
+            console.log('onload');
+        },
+        onShow: function () {
+            console.log('onshow');
+            app.getRecords((data) => {
+                console.log('record length:', data.length);
+            });
+        },
         historyToggle: function (e) {
             var id = e.currentTarget.id;
             for (var i = 0; i < historyList.length; i++) {
@@ -134,26 +145,26 @@ Page(
             });
         }
         ,
-        recordStart:function(e){
+        recordStart: function (e) {
             recordStartX = e.touches[0].clientX;
-            console.log('startX ',recordStartX);
+            console.log('startX ', recordStartX);
         }
         ,
-        recordMove:function(e){
+        recordMove: function (e) {
             var x = e.touches[0].clientX;
             var mX = recordStartX - x;
-            console.log('x ' ,x);
-            console.log('mx ',mX);
+            console.log('x ', x);
+            console.log('mx ', mX);
             var historyList = this.data.historyList;
             var item = historyList[0];
             var records = item.records;
-            records[0].offsetX=18-mX;
+            records[0].offsetX = 18 - mX;
             this.setData({
                 historyList: historyList
             });
         }
         ,
-        recordEnd:function(e){
+        recordEnd: function (e) {
 
         }
 
