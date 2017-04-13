@@ -112,8 +112,8 @@ var historyList = [
         ]
     }
 ];
+var repository = require('../../utils/repository.js');
 var recordStartX = 0;
-var app = getApp();
 Page(
     {
         data: {
@@ -126,7 +126,7 @@ Page(
         },
         onShow: function () {
             console.log('onshow');
-            app.getRecords((data) => {
+            repository.getRecords((data) => {
                 console.log('record length:', data.length);
             });
         },

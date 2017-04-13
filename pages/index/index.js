@@ -1,6 +1,5 @@
 //index.js
 //获取应用实例
-var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
@@ -15,6 +14,9 @@ Page({
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    
+
+  },
+  onShow:function(){
+    console.log('onshow');
   }
 })
