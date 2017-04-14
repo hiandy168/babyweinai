@@ -50,6 +50,20 @@ Page({
       amountInvaild: this.data.amountInvaild
     });
   },
+  bindDateChange: function (e) {
+    var val = e.detail.value;
+    this.data.date = val;
+    this.setData({
+      date: val
+    });
+  },
+  bindTimeChange: function (e) {
+    var val = e.detail.value;
+    this.data.time = val;
+    this.setData({
+      time: val
+    });
+  },
   selectedTypeChange: function (e) {
     console.log('selectedTypeChange');
 
