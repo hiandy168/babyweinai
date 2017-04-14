@@ -2,7 +2,7 @@
   <view class="page-body">
     <view class="page-section page-section-gap">
       <view class="weui-cells__title">项目</view>
-      <view class="padding-box">
+      <view class="padding-box weui-cells weui-cells_after-title">
         <radio-group>
           <label>
             <radio value="value" checked="false" />母乳

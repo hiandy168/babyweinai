@@ -1,12 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/about/about",
     "pages/record/record",
     "pages/history/history",
     "pages/historyDetail/historyDetail",
     "pages/charts/charts",
-    "pages/setting/setting"
+    "pages/setting/setting",
+     "pages/addType/addType"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,24 @@
+<view class="container-page">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells__title">项目名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="text" placeholder="项目名称" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">单位名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" type="text" placeholder="单位名称" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section padding-box">
+      <button type="primary" class="ok">确定</button>
+      <button type="default" bindtap="cancleEvent">取消</button>
+    </view>
+  </view>
+</view>

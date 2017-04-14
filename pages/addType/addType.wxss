@@ -1,3 +1,4 @@
+/* pages/logs/logs.wxss */
 @import "../common/weui.wxss";
 .container-page {
   height: 100%;
@@ -16,7 +17,7 @@
   margin-bottom: 20rpx;
 }
 .padding-box{
-    padding: 20rpx 30rpx 20rpx 30rpx;
+    padding: 0 30rpx 0 30rpx
 }
 
 button.ok{
