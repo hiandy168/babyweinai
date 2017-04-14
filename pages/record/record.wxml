@@ -1,65 +1,59 @@
 <view class="container-page">
   <view class="page-body">
-    <view class="page-section page-section-gap">
-      <view class="weui-cells__title">项目</view>
-      <view class="padding-box weui-cells weui-cells_after-title">
-        <radio-group>
-          <label>
-            <radio value="value" checked="false" />母乳
+    <form bindsubmit="formSubmit">
+      <view class="page-section page-section-gap">
+        <view class="weui-cells__title">项目</view>
+        <view class="padding-box weui-cells weui-cells_after-title">
+          <radio-group bindchange="selectedTypeChange" name="type">
+            <label wx:for="{{types}}" wx:key="{{item.name}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
           </label>
-          <label>
-            <radio value="value" checked="false" />配方奶
-          </label>
-          <label>
-            <radio value="value" checked="false" />开水
-          </label>
-          <label>
-            <radio value="value" checked="false" />便便
-          </label>
-        </radio-group>
-      </view>
-    </view>
-    <view class="page-section">
-      <view class="weui-cells__title">计量</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" type="number" placeholder="输入计量" />
+
+          </radio-group>
         </view>
       </view>
-    </view>
-    <view class="page-section">
-      <view class="weui-cells__title">日期</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__bd">
-            <picker mode="date" value="{{time}}">
-              <view class="weui-input">{{time}}</view>
-            </picker>
+      <view class="page-section">
+        <view class="weui-cells__title">数量 ({{selectedType.unit}})</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" type="number" name="amount" bindinput="bindAmountInput" placeholder="请输入数量" placeholder-class="{{amountInvaild?'invalid':''}}" value="{{selectedType.default}}" />
           </view>
         </view>
       </view>
-      <view class="weui-cells__title">时间</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__bd">
-            <picker mode="time" value="{{time}}">
-              <view class="weui-input">{{time}}</view>
-            </picker>
+      <view class="page-section">
+        <view class="weui-cells__title">日期</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{date}}" name="date" >
+                <view class="weui-input">{{date}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">时间</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <picker mode="time" value="{{time}}" name="time" >
+                <view class="weui-input">{{time}}</view>
+              </picker>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-        <view class="page-section">
-      <view class="weui-cells__title">备注</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <input class="weui-input" type="text" />
+      <view class="page-section">
+        <view class="weui-cells__title">备注</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" type="text" name="remark" placeholder="请输入备注信息"/>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="page-section padding-box">
-        <button type="primary" class="ok">确定</button>
+      <view class="page-section padding-box">
+        <button type="primary" formType="submit" class="ok">确定</button>
         <button type="default" bindtap="cancleEvent">取消</button>
-    </view>
+      </view>
+    </form>
   </view>
 </view>

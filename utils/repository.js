@@ -1,5 +1,5 @@
 var defaultTypes = [
-    { name: '母乳', unit: '次', default: 1 },
+    { name: '母乳', unit: '次', default: 1, checked: true },
     { name: '配方奶', unit: 'ml' },
     { name: '开水', unit: 'ml' },
     { name: '便便', unit: '次', default: 1 }
@@ -17,7 +17,7 @@ var getRecords = function (callback) {
                 key: 'records',
                 success: function (res) {
                     // success
-                    global_records =  res.data;
+                    global_records = res.data;
                     callback(global_records);
                 },
                 fail: function (res) {
@@ -39,16 +39,67 @@ var getRecords = function (callback) {
     }
 };
 
-var insertRecord = function (record, callback) {
+var findDateNode = function (date, callback) {
+    getRecords((records) => {
+        for (var i = 0; i < records.length; i++) {
+            var node = records[i];
+            if (node.date === date) {
+                callback({
+                    success: true,
+                    result: node
+                });
+                return;
+            }
+        }
 
+        callback({
+            success: false
+        });
+    });
+}
+
+var insertRecord = function (record, callback) {
+    findDateNode(record.date, (data) => {
+        if (data.success) {
+            //find
+            var dateNode = data.result;
+            dateNode.records.push(record);
+            saveRecords(callback);
+        } else {
+            //not find
+            var dateNode = {
+                date: record.date,
+                records: []
+            };
+            dateNode.records.push(record);
+            getRecords((records) => {
+                records.push(dateNode);
+                saveRecords(callback);
+            });
+        }
+    });
 }
 
 var deleteRecord = function (recordId, callback) {
 
 }
 
-var saveRecords = function () {
+var saveRecords = function (callback) {
     //save records to stornage
+    wx.setStorage({
+        key: 'records',
+        data: global_records,
+        success: function () {
+            callback({
+                success: true
+            });
+        },
+        fail: function () {
+            callback({
+                success: false
+            });
+        }
+    });
 }
 
 var getTypes = function () {
@@ -85,3 +136,4 @@ var deleteType = function (t, callback) {
 
 module.exports.getRecordTypes = getTypes;
 module.exports.getRecords = getRecords;
+module.exports.insertRecord = insertRecord;

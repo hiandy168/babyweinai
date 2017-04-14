@@ -23,3 +23,7 @@ button.ok{
   margin-top: 50rpx;
   margin-bottom: 20rpx;
 }
+
+.invalid{
+  color:red
+}
