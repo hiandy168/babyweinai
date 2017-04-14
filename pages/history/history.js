@@ -1,117 +1,4 @@
-var historyList = [
-    {
-        id: '1', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '2', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:03', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '3', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '4', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '5', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:03', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '6', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:03', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '7', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '8', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '9', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '10', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '11', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '12', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '13', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '14', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '15', title: '2017-01-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    },
-    {
-        id: '16', title: '2017-02-01', records: [
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' },
-            { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水' }
-        ]
-    }
-];
+var historyList = [];
 var repository = require('../../utils/repository.js');
 var recordStartX = 0;
 Page(
@@ -126,8 +13,12 @@ Page(
         },
         onShow: function () {
             console.log('onshow');
+            var that = this;
             repository.getRecords((data) => {
                 console.log('record length:', data.length);
+                that.setData({
+                    historyList: data
+                });
             });
         },
         historyToggle: function (e) {

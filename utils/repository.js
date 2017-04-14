@@ -137,3 +137,4 @@ var deleteType = function (t, callback) {
 module.exports.getRecordTypes = getTypes;
 module.exports.getRecords = getRecords;
 module.exports.insertRecord = insertRecord;
+module.exports.findDateNode = findDateNode;

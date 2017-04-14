@@ -1,11 +1,15 @@
 var repository = require('../../utils/repository.js');
+var util = require('../../utils/util.js');
+var now = new Date();
+var dateString = util.formatTime(now);
+var arr = dateString.split(' ');
 // Register a Page.
 Page({
   data: {
     types: [],
     selectedType: {},
-    date: '2017-04-14',
-    time: '17:00',
+    date: arr[0],
+    time: arr[1],
     amount: null,
     remark: '',
     amountInvaild: false
@@ -134,11 +138,22 @@ Page({
       amount: amount,
       date: date,
       time: time,
-      remark: remark
+      remark: remark,
+      unit:this.data.selectedType.unit
     };
     repository.insertRecord(record, (result) => {
       if (result.success) {
         console.log('insertRecord success');
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration:500
+        });
+        setTimeout(()=>{
+          wx.navigateBack({
+            delta: 1
+          });
+        },500);
       }
       else {
         console.log('insertRecord fail');

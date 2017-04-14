@@ -1,15 +1,29 @@
-
-var detailList = [
-    { datetime: '2017-01-01 17:00', count: 100, unit: 'ml', type: '开水', remark: '哈哈哈哈' },
-    { datetime: '2017-01-01 17:01', count: 100, unit: 'ml', type: '开水' },
-    { datetime: '2017-01-01 17:02', count: 100, unit: 'ml', type: '开水' }
-];
+var detailList = [];
+var repository = require('../../utils/repository.js');
 var recordStartX = 0;
 var currentOffsetX = 0;
 Page(
     {
         data: {
             detailList: detailList
+        }
+        ,
+        onLoad:function(op){
+            var that = this;
+            var date = op.date;
+            wx.setNavigationBarTitle({
+              title: date,
+              success: function(res) {
+                // success
+              }
+            });
+            repository.findDateNode(date,(result)=>{
+                if(result.success){
+                    that.setData({
+                      detailList:result.result.records  
+                    });
+                }
+            });
         }
         ,
         recordStart: function (e) {
