@@ -7,10 +7,7 @@
           {{item.date}}
         </view>
         <view class="summary">
-          <view>母乳1次</view>
-          <view>配方奶1000ml</view>
-          <view>开水2000ml</view>
-          <view>便便3次</view>
+          <view wx:for="{{item.summary}}" wx:for-item="smItem">{{smItem.name+smItem.totalAmount+smItem.unit}}</view>
         </view>
       </view>
       <view class="arrow">

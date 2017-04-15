@@ -64,6 +64,18 @@ var insertRecord = function (record, callback) {
             //find
             var dateNode = data.result;
             dateNode.records.push(record);
+            dateNode.records.sort((a, b) => {
+                if (a.time === b.time) {
+                    return 0;
+                }
+                if (a.time > b.time) {
+                    return 1;
+                }
+                if (a.time < b.time) {
+                    return -1;
+                }
+            });
+           
             saveRecords(callback);
         } else {
             //not find
@@ -134,7 +146,9 @@ var deleteType = function (t, callback) {
 
 }
 
+module.exports.getDefaultTypes = getDefaultTypes;
 module.exports.getRecordTypes = getTypes;
 module.exports.getRecords = getRecords;
 module.exports.insertRecord = insertRecord;
 module.exports.findDateNode = findDateNode;
+module.exports.saveRecords = saveRecords;

@@ -1,5 +1,6 @@
 var historyList = [];
 var repository = require('../../utils/repository.js');
+var summary = require('../../utils/summary.js');
 var recordStartX = 0;
 Page(
     {
@@ -14,8 +15,18 @@ Page(
         onShow: function () {
             console.log('onshow');
             var that = this;
+            var types = repository.getDefaultTypes();
+
             repository.getRecords((data) => {
                 console.log('record length:', data.length);
+                data.forEach((i) => {
+                    var arr = [];
+                    var summaryResult = summary.dateDefaultSummary(i);
+                    types.forEach((t) => {
+                        arr.push(summaryResult[t.name]);
+                    });
+                    i.summary = arr;
+                });
                 that.setData({
                     historyList: data
                 });
