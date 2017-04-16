@@ -1,14 +1,33 @@
 var repository = require('../utils/repository.js');
-var todaySummary = function () {
-
-}
+var util = require('../utils/util.js');
 
 var sevenDaySummary = function () {
+    var dates = [];
+    var todayVal = new Date().valueOf();
+    for (var i = 0; i < 7; i++) {
+        var today = new Date(todayVal);
+        var date = today.getDate();
 
+        today.setDate(date - i);
+        dates.push(today);
+    }
+    var result = {};
+    dates.forEach((d) => {
+        var dateStr = util.formatDate(d);
+        repository.findDateNode(dateStr, (r) => {
+            if (r.success) {
+                var node = r.result;
+                var summary = dateDefaultSummary(node);
+                result[dateStr] = summary;
+            }
+            else {
+                result[dateStr] = {};
+            }
+        });
+    });
+    return result;
 }
-
-var dateDefaultSummary = function (dateNode) {
-    var types = repository.getDefaultTypes();
+var dateSummary = function (dateNode, types) {
     var result = {};
     types.forEach((i) => {
         result[i.name] = {
@@ -37,7 +56,10 @@ var dateDefaultSummary = function (dateNode) {
 
     return result;
 }
+var dateDefaultSummary = function (dateNode) {
+    var types = repository.getDefaultTypes();
+    return dateSummary(dateNode, types);
+}
 
-module.exports.todaySummary = todaySummary;
 module.exports.sevenDaySummary = sevenDaySummary;
 module.exports.dateDefaultSummary = dateDefaultSummary;
