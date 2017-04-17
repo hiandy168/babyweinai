@@ -5,10 +5,11 @@
         <view class="weui-cells__title">项目</view>
         <view class="padding-box weui-cells weui-cells_after-title">
           <radio-group bindchange="selectedTypeChange" name="type">
-            <label wx:for="{{types}}" wx:key="{{item.name}}">
-            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
-          </label>
-
+            <view wx:for="{{types}}" wx:key="{{item.name}}">
+              <label>
+                <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+              </label>
+            </view>
           </radio-group>
         </view>
       </view>
@@ -46,7 +47,7 @@
         <view class="weui-cells__title">备注</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-            <input class="weui-input" type="text" name="remark" placeholder="请输入备注信息"/>
+            <input class="weui-input" type="text" name="remark" placeholder="请输入备注信息" />
           </view>
         </view>
       </view>

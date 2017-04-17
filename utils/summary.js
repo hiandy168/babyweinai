@@ -3,6 +3,7 @@ var util = require('../utils/util.js');
 
 var sevenDaySummary = function () {
     var dates = [];
+    var types = repository.getRecordTypes();
     var todayVal = new Date().valueOf();
     for (var i = 0; i < 7; i++) {
         var today = new Date(todayVal);
@@ -17,7 +18,7 @@ var sevenDaySummary = function () {
         repository.findDateNode(dateStr, (r) => {
             if (r.success) {
                 var node = r.result;
-                var summary = dateDefaultSummary(node);
+                var summary = dateSummary(node,types);
                 result[dateStr] = summary;
             }
             else {

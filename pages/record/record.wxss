@@ -23,7 +23,16 @@ button.ok{
   margin-top: 50rpx;
   margin-bottom: 20rpx;
 }
-
+radio-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 60rpx;
+}
+radio-group view{
+  margin-right: 30rpx;
+}
 .invalid{
   color:red
 }

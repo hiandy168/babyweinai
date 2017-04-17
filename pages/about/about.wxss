@@ -1,1 +1,4 @@
-/* pages/logs/logs.wxss */
+@import "../common/weui.wxss";
+page{
+    background-color: #ffffff
+}

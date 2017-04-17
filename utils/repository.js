@@ -140,6 +140,15 @@ var getCustomTypes = function () {
 
 var insertCustomType = function (t, callback) {
     var customTypes = getCustomTypes();
+    var exists = customTypes.find((ct) => {
+        return ct.name === t.name;
+    });
+    if (exists) {
+        callback({
+            success: true
+        });
+        return;
+    }
     customTypes.push(t);
     wx.setStorage({
         key: 'recordTypes',
@@ -157,7 +166,7 @@ var insertCustomType = function (t, callback) {
     });
 }
 
-var saveCustomTypes = function (types,callback) {
+var saveCustomTypes = function (types, callback) {
     wx.setStorage({
         key: 'recordTypes',
         data: types,

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-article">
+        <view class="weui-article__section">
+          <view class="weui-article__title">关于</view>
+          <view class="weui-article__section">
+            <view class="weui-article__p">
+              宝宝喂奶是一款专为宝爸宝妈设计的小程序。可以用来记录宝宝每天进食的母乳、配方奶、开水等的情况。可以查看历史数据，也可以查看近7天的统计图表。你还可以自己定义需要记录的项目。最后祝所有的宝宝身体健康。
+            </view>
+            <view class="weui-article__p">
+             mail : minj.zhou@gmail.com
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

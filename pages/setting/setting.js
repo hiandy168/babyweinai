@@ -89,6 +89,9 @@ Page({
 
     var types = repository.getCustomTypes();
     types.splice(index, 1);
+    types.forEach((t)=>{
+      t.offsetX=0;
+    });
     repository.saveCustomTypes(types, (r) => {
       if (r.success) {
         that.setData({
