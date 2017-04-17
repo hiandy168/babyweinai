@@ -75,7 +75,7 @@ var insertRecord = function (record, callback) {
                     return -1;
                 }
             });
-           
+
             saveRecords(callback);
         } else {
             //not find
@@ -138,17 +138,48 @@ var getCustomTypes = function () {
     return customTypes;
 }
 
-var insertType = function (t, callback) {
-
+var insertCustomType = function (t, callback) {
+    var customTypes = getCustomTypes();
+    customTypes.push(t);
+    wx.setStorage({
+        key: 'recordTypes',
+        data: customTypes,
+        success: () => {
+            callback({
+                success: true
+            });
+        },
+        fail: () => {
+            callback({
+                success: false
+            });
+        }
+    });
 }
 
-var deleteType = function (t, callback) {
-
+var saveCustomTypes = function (types,callback) {
+    wx.setStorage({
+        key: 'recordTypes',
+        data: types,
+        success: () => {
+            callback({
+                success: true
+            });
+        },
+        fail: () => {
+            callback({
+                success: false
+            });
+        }
+    });
 }
 
 module.exports.getDefaultTypes = getDefaultTypes;
 module.exports.getRecordTypes = getTypes;
 module.exports.getRecords = getRecords;
+module.exports.getCustomTypes = getCustomTypes;
 module.exports.insertRecord = insertRecord;
 module.exports.findDateNode = findDateNode;
 module.exports.saveRecords = saveRecords;
+module.exports.insertCustomType = insertCustomType;
+module.exports.saveCustomTypes = saveCustomTypes;
