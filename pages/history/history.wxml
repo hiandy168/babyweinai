@@ -1,7 +1,7 @@
 <view class="container">
   <block wx:for="{{historyList}}" wx:key="{{item.date}}">
     <navigator url="../historyDetail/historyDetail?date={{item.date}}">
-    <view id="{{item.date}}" class="history-item" >
+    <view id="{{item.date}}" class="history-item {{item.records.length==0?'hidden':''}}" >
       <view class="title">
         <view>
           {{item.date}}

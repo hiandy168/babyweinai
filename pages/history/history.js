@@ -19,6 +19,17 @@ Page(
 
             repository.getRecords((data) => {
                 console.log('record length:', data.length);
+                data.sort((a, b) => {
+                    if (a.date === b.date) {
+                        return 0;
+                    }
+                    if (a.date > b.date) {
+                        return -1;
+                    }
+                    if (a.date < b.date) {
+                        return 1;
+                    }
+                });
                 data.forEach((i) => {
                     var arr = [];
                     var summaryResult = summary.dateDefaultSummary(i);

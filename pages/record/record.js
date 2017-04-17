@@ -1,15 +1,13 @@
 var repository = require('../../utils/repository.js');
 var util = require('../../utils/util.js');
-var now = new Date();
-var dateString = util.formatTime(now);
-var arr = dateString.split(' ');
+
 // Register a Page.
 Page({
   data: {
     types: [],
     selectedType: {},
-    date: arr[0],
-    time: arr[1],
+    date: '',
+    time: '',
     amount: null,
     remark: '',
     amountInvaild: false
@@ -37,6 +35,13 @@ Page({
   onShow: function () {
     // 页面显示
     console.log("onShow");
+    var now = new Date();
+    var dateString = util.formatTime(now);
+    var arr = dateString.split(' ');
+    this.setData({
+      date: arr[0],
+      time: arr[1]
+    });
   },
   onHide: function () {
     // 页面隐藏
@@ -139,7 +144,7 @@ Page({
       date: date,
       time: time,
       remark: remark,
-      unit:this.data.selectedType.unit
+      unit: this.data.selectedType.unit
     };
     repository.insertRecord(record, (result) => {
       if (result.success) {
@@ -147,13 +152,13 @@ Page({
         wx.showToast({
           title: '成功',
           icon: 'success',
-          duration:500
+          duration: 500
         });
-        setTimeout(()=>{
+        setTimeout(() => {
           wx.navigateBack({
             delta: 1
           });
-        },500);
+        }, 500);
       }
       else {
         console.log('insertRecord fail');

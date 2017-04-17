@@ -85,7 +85,7 @@ var insertRecord = function (record, callback) {
             };
             dateNode.records.push(record);
             getRecords((records) => {
-                records.push(dateNode);
+                records.unshift(dateNode);
                 saveRecords(callback);
             });
         }

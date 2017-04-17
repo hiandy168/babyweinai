@@ -1,5 +1,17 @@
 var wxCharts = require('../../utils/wxcharts-min.js');
 var summaryUtil = require('../../utils/summary.js');
+var colors=[
+    '#EDAAA2',
+    '#09bb07',
+    '#576b95'
+];
+var colorIndex=0;
+var getColor = function(){
+    var color = colors[colorIndex%3];
+    colorIndex++;
+
+    return color;
+};
 var windowWidth = 320;
 var chartHeight = 180;
 var newChart = function (categories,peiFangNai,kaiShui) {
@@ -31,7 +43,7 @@ var newChart1 = function (categories,muRu) {
         categories: categories,
         series: [{
             name: '母乳',
-            color: '#dddddd',
+            color: getColor(),
             data: muRu,
 
         }],
@@ -51,7 +63,7 @@ var newChart2 = function (categories,bianbian) {
         series: [{
             name: '便便',
             data: bianbian,
-
+            color:getColor(),
         }],
         yAxis: {
             title: '数量（次）',
@@ -76,6 +88,7 @@ Page({
         // newChart2();
     },
     onShow: function () {
+        colorIndex =0;
         var sevenSummary = summaryUtil.sevenDaySummary();
         var categories = [];
         var peiFangNaiArr = [];

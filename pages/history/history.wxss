@@ -106,3 +106,7 @@
 .record .r-item {
   margin-right: 40rpx;
 }
+
+.hidden{
+  display:none
+}
