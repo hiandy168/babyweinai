@@ -7,6 +7,25 @@ var defaultTypes = [
 
 var global_records;
 
+var reset = function (callback) {
+    wx.clearStorage({
+        success: function (res) {
+            global_records = [];
+            callback({
+                success: true
+            });
+        },
+        fail: function (res) {
+            callback({
+                success: false
+            });
+        },
+        complete: function (res) {
+            // complete
+        }
+    })
+}
+
 var getRecords = function (callback) {
     if (callback) {
         if (global_records) {
@@ -192,3 +211,4 @@ module.exports.findDateNode = findDateNode;
 module.exports.saveRecords = saveRecords;
 module.exports.insertCustomType = insertCustomType;
 module.exports.saveCustomTypes = saveCustomTypes;
+module.exports.reset = reset;

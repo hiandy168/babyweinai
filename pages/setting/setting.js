@@ -79,7 +79,7 @@ Page({
       customTypes: customTypes
     });
   },
-  deleteTypeEvent: function(e) {
+  deleteTypeEvent: function (e) {
     var that = this;
     var index = e.currentTarget.dataset.index;
     console.log(index);
@@ -89,14 +89,56 @@ Page({
 
     var types = repository.getCustomTypes();
     types.splice(index, 1);
-    types.forEach((t)=>{
-      t.offsetX=0;
+    types.forEach((t) => {
+      t.offsetX = 0;
     });
     repository.saveCustomTypes(types, (r) => {
       if (r.success) {
         that.setData({
           customTypes: types
         });
+      }
+    })
+  }
+  ,
+  resetMiniApp: function (e) {
+    var that = this;
+    wx.showActionSheet({
+      itemList: ['重置'],
+      itemColor: '#e64340',
+      success: function (res) {
+        if (res.tapIndex != undefined) {
+          if (res.tapIndex == 0) {
+            wx.showModal({
+              title: '提示',
+              content: '重置小程序将抹掉所有填写的数据，您是否确定要重置？',
+              success: function (res) {
+                if (res.confirm) {
+                  repository.reset((r) => {
+                    if (r.success) {
+                      wx.showToast({
+                        title: '重置成功',
+                        icon: 'success',
+                        duration: 1000
+                      });
+                      that.setData({
+                        customTypes: []
+                      });
+                      setTimeout(() => {
+                        wx.switchTab({
+                          url: '/pages/index/index'
+                        })
+                      },1000);
+                    }
+                  });
+                }
+              }
+            })
+          }
+        }
+      },
+      fail: function (res) {
+        //console.log(res.errMsg)
       }
     })
   }

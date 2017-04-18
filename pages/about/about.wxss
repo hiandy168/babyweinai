@@ -2,3 +2,8 @@
 page{
     background-color: #ffffff
 }
+
+.pay-image-box{
+    display: flex;
+    justify-content: center;
+}
