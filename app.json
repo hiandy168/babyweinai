@@ -20,26 +20,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/main.png",
-        "selectedIconPath": "images/main.png"
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_green.png"
       },
       {
         "pagePath": "pages/history/history",
         "text": "历史",
-        "iconPath": "images/main.png",
-        "selectedIconPath": "images/main.png"
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list_green.png"
       },
       {
         "pagePath": "pages/charts/charts",
         "text": "统计",
-        "iconPath": "images/chart.png",
-        "selectedIconPath": "images/main.png"
+        "iconPath": "images/tongji.png",
+        "selectedIconPath": "images/tongji_green.png"
       },
       {
         "pagePath": "pages/setting/setting",
         "text": "设置",
-        "iconPath": "images/chart.png",
-        "selectedIconPath": "images/main.png"
+        "iconPath": "images/setting.png",
+        "selectedIconPath": "images/setting_green.png"
       }
     ],
     "backgroundColor": "#ffffff"
