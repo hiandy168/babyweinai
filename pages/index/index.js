@@ -32,4 +32,17 @@ Page({
       }
     });
   }
+  ,
+   onShareAppMessage: function () {
+    return {
+      title: '宝宝喂奶是一款用来记录宝宝吃奶等情况的小工具。',
+      path: 'pages/index/index',
+      success: function(res) {
+        // 分享成功
+      },
+      fail: function(res) {
+        // 分享失败
+      }
+    }
+  }
 })
