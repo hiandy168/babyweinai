@@ -53,5 +53,9 @@
         <button type="primary">记一次</button>
       </navigator>
     </view>
+    <view>
+        {{backname}}
+        <image src="{{background}}"></image>
+    </view>
   </view>
 </view>

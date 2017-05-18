@@ -37,6 +37,15 @@ var getRecords = function (callback) {
                 success: function (res) {
                     // success
                     global_records = res.data;
+                    var count = 0;
+                    for(var i=0;i<res.data.length;i++){
+                      for(var j=0;j<res.data[i].records.length;j++){
+                        count++;
+                      }
+                    }
+                    if (count>20){
+                      global_records.back = 1;
+                    }
                     callback(global_records);
                 },
                 fail: function (res) {

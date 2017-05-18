@@ -11,9 +11,9 @@
               mail : minj.zhou@gmail.com
             </view>
           </view>
-          <view class="weui-article__section" style="display:none">
+          <view class="weui-article__section" >
             <view class="weui-article__p">
-              如果喜欢这款小程序，也可以扫描二维码向我捐助
+              如果喜欢这款小程序，也可以扫描二维码向我捐助，谢谢。
             </view>
             <view class="pay-image-box">
               <image src="../../images/pay.png"></image>
